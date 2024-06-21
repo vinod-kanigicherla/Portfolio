@@ -131,3 +131,58 @@ body {
         font-size: 1em;
     }
 }
+
+.career {
+    padding: 50px;
+    background-color: #f9f9f9;
+    text-align: left;
+    border-top: 2px solid #ececec;
+}
+
+.career-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px; 
+}
+
+.career h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #333;
+    text-align: center;
+}
+
+.career h3 {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+    color: #555;
+}
+
+.career ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.career li {
+    font-size: 1.2em;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+@media (max-width: 768px) {
+    .career {
+        padding: 30px;
+    }
+
+    .career h2 {
+        font-size: 1.5em;
+    }
+
+    .career h3 {
+        font-size: 1.2em;
+    }
+
+    .career li {
+        font-size: 1em;
+    }
+}
