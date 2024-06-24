@@ -15,7 +15,9 @@ def index():
         "work_experience_2": "Full Stack Development Intern at MOVE Lab @ UCSB (2023)",
         "work_experience_3": "Software Engineer Intern at Motivo (2022)",
         "education_1": "B.S. in Statistics and Data Science, UCSB (Expected 2027)",
-        "education_2": "High School Diploma, Oak Ridge High School (2019-2023)"
+        "education_2": "High School Diploma, Oak Ridge High School (2019-2023)",
+        "hobby_1": "Drumming",
+        "hobby_2": "Hiking"
     }
 
     return render_template('index.html', **context)
