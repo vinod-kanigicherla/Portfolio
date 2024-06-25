@@ -17,12 +17,12 @@
     }).addTo(map);
 
     var places = [
-        { lat: 37.0902, lon: -95.7129, name: 'United States' },
-        { lat: 20.5937, lon: 78.9629, name: 'India' },
-        { lat: 4.2105, lon: 101.9758, name: 'Malaysia' },
-        { lat: 23.8859, lon: 45.0792, name: 'Saudi Arabia' },
-        { lat: 54.5260, lon: 15.2551, name: 'Europe' }
-    ];
+    { lat: 37.0902, lon: -95.7129, name: 'United States' },
+    { lat: 20.5937, lon: 78.9629, name: 'India' },
+    { lat: 4.2105, lon: 101.9758, name: 'Malaysia' },
+    { lat: 23.8859, lon: 45.0792, name: 'Saudi Arabia' },
+    { lat: 46.6034, lon: 1.8883, name: 'France' }
+];
 
     places.forEach(function(place) {
         L.marker([place.lat, place.lon]).addTo(map)
