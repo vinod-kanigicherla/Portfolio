@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <section id="hobbies">
+        <h1>My Hobbies</h1>
+        <div class="hobby">
+            <img src="./static/img/drums.jpg" alt="Hobby 1">
+            <div class="hobby-description">
+                <h2>{{ hobby_1 }}</h2>
+            </div>
+        </div>
+        <div class="hobby">
+            <img src="./static/img/hiking.jpg" alt="Hobby 2">
+            <div class="hobby-description">
+                <h2>{{ hobby_2 }}</h2>
+            </div>
+        </div>
+    </section>
+</div>
+{% endblock %}

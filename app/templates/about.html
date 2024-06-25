@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section id="about-me" class="about-me">
+    <h2>About Me</h2>
+    <p>{{ about_me }}</p>
+</section>
+
+<section id="career" class="career">
+    <h2>Career</h2>
+    <div class="career-container">
+        <div id="work-experiences" class="work-experiences">
+            <h3>Previous Work Experiences</h3>
+            <ul>
+                <li><i class="fas fa-briefcase"></i> {{ work_experience_1 }}</li>
+                <li><i class="fas fa-briefcase"></i> {{ work_experience_2 }}</li>
+                <li><i class="fas fa-briefcase"></i> {{ work_experience_3 }}</li>
+            </ul>
+        </div>
+        <div id="education" class="education">
+            <h3>Education</h3>
+            <ul>
+                <li><i class="fas fa-graduation-cap"></i> {{ education_1 }}</li>
+                <li><i class="fas fa-graduation-cap"></i> {{ education_2 }}</li>
+            </ul>
+        </div>
+    </div>
+</section>
+{% endblock %}
