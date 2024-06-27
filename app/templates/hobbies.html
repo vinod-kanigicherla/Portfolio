@@ -4,18 +4,14 @@
 <div class="container">
     <section id="hobbies">
         <h1>My Hobbies</h1>
+        {% for hobby in hobbies %}
         <div class="hobby">
-            <img src="./static/img/drums.jpg" alt="Hobby 1">
+            <img src="{{ url_for('static', filename='img/' ~ hobby.image) }}" alt="{{ hobby.name }}">
             <div class="hobby-description">
-                <h2>{{ hobby_1 }}</h2>
+                <h2>{{ hobby.name }}</h2>
             </div>
         </div>
-        <div class="hobby">
-            <img src="./static/img/hiking.jpg" alt="Hobby 2">
-            <div class="hobby-description">
-                <h2>{{ hobby_2 }}</h2>
-            </div>
-        </div>
+        {% endfor %}
     </section>
 </div>
 {% endblock %}

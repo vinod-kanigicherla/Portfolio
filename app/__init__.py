@@ -18,11 +18,15 @@ def about():
     context = {
         "title": "Vinod Kanigicherla",
         "about_me": "Hi! I'm Vinod, a student at UCSB majoring in Computer Science. I am deeply interested in the intersection of data science, computer science, and software engineering, with a particular focus on machine learning and its practical applications for solving real-world challenges.",
-        "work_experience_1": "Undergraduate Researcher at Communications @ UCSB (2023-2024)",
-        "work_experience_2": "Full Stack Development Intern at MOVE Lab @ UCSB (2023)",
-        "work_experience_3": "Software Engineer Intern at Motivo (2022)",
-        "education_1": "B.S. in Statistics and Data Science, UCSB (Expected 2027)",
-        "education_2": "High School Diploma, Oak Ridge High School (2019-2023)"
+        "work_experiences": [
+            {"role": "Undergraduate Researcher at Communications @ UCSB", "duration": "2023-2024"},
+            {"role": "Full Stack Development Intern at MOVE Lab @ UCSB", "duration": "2023"},
+            {"role": "Software Engineer Intern at Motivo", "duration": "2022"}
+        ],
+        "education": [
+            {"degree": "B.S. in Statistics and Data Science, UCSB", "duration": "Expected 2027"},
+            {"degree": "High School Diploma, Oak Ridge High School", "duration": "2019-2023"}
+        ]
     }
     return render_template('about.html', **context)
 
@@ -30,8 +34,10 @@ def about():
 def hobbies():
     context = {
         "title": "Vinod Kanigicherla",
-        "hobby_1": "Drumming",
-        "hobby_2": "Hiking"
+        "hobbies": [
+            {"name": "Drumming", "image": "drums.jpg"},
+            {"name": "Hiking", "image": "hiking.jpg"}
+        ]
     }
     return render_template('hobbies.html', **context)
 
