@@ -284,3 +284,95 @@ body {
     border: 1px solid #ccc;
     margin: 0 auto;
 }
+
+.timeline-container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.timeline-container h1 {
+    text-align: center;
+    color: #333;
+}
+
+.timeline-form {
+    margin-bottom: 20px;
+}
+
+.timeline-form-group {
+    margin-bottom: 15px;
+}
+
+.timeline-form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.timeline-form-group input,
+.timeline-form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.timeline-form-group textarea {
+    height: 100px;
+    resize: vertical;
+}
+
+.timeline-form button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #1C539F;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.timeline-form button:hover {
+    background-color: #0056b3;
+}
+
+.timeline-posts {
+    margin-top: 20px;
+}
+
+.timeline-post {
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    background-color: #fff;
+}
+
+.timeline-post h2 {
+    margin: 0 0 5px 0;
+    font-size: 1.25em;
+    color: #333;
+}
+
+.timeline-post-email {
+    font-size: 0.875em;
+    color: #666;
+}
+
+.timeline-post-created-at {
+    font-size: 0.75em;
+    color: #999;
+    margin-top: 10px;
+    text-align: right;
+}
+
+.timeline-post-gravatar {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 10px;
+}

@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="timeline-container">
+    <form id="timelineForm" class="timeline-form">
+        <div class="timeline-form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name">
+        </div>
+        <div class="timeline-form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email">
+        </div>
+        <div class="timeline-form-group">
+            <label for="content">Content</label>
+            <textarea id="content" name="content"></textarea>
+        </div>
+        <button type="submit">Submit</button>
+    </form>
+    <div id="timelinePosts" class="timeline-posts">
+        <!-- timeline posts here -->
+    </div>
+</div>
+
+<script>
+    document.getElementById('timelineForm').addEventListener('submit', async function(event) {
+        event.preventDefault();
+        const formData = new FormData(event.target);
+        const response = await fetch('/api/timeline_post', {
+            method: 'POST',
+            body: formData
+        });
+        if (response.ok) {
+            event.target.reset();
+            loadTimelinePosts();
+        }
+    });
+
+    async function loadTimelinePosts() {
+        const response = await fetch('/api/timeline_post');
+        const data = await response.json();
+        const timelinePosts = document.getElementById('timelinePosts');
+        timelinePosts.innerHTML = '';
+        data.timeline_posts.forEach(post => {
+            const postElement = document.createElement('div');
+            postElement.classList.add('timeline-post');
+            postElement.innerHTML = `
+                <div class="timeline-post-header">
+                    <img src="${post.gravatar}" class="timeline-post-gravatar">
+                    <h2>${post.name}</h2>
+                </div>
+                <p class="timeline-post-email">${post.email}</p>
+                <p>${post.content}</p>
+                <p class="timeline-post-created-at">${new Date(post.created_at).toLocaleString()}</p>
+            `;
+            timelinePosts.appendChild(postElement);
+        });
+    }
+
+    loadTimelinePosts();
+</script>
+{% endblock %}

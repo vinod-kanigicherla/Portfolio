@@ -6,6 +6,8 @@ from flask import Flask, render_template, request
 from peewee import *
 from playhouse.shortcuts import model_to_dict
 
+import hashlib
+
 load_dotenv()
 
 app = Flask(__name__)
@@ -27,6 +29,10 @@ class TimelinePost(Model):
 
     class Meta:
         database = mydb
+
+def get_gravatar_url(email, size=100):
+    email_hash = hashlib.md5(email.lower().encode('utf-8')).hexdigest()
+    return f"https://www.gravatar.com/avatar/{email_hash}?s={size}&d=identicon"
 
 mydb.connect()
 mydb.create_tables([TimelinePost])
@@ -69,6 +75,11 @@ def places():
     context = {"title": "Vinod Kanigicherla"}
     return render_template("places.html", **context)
 
+@app.route('/timeline')
+def timeline():
+    context = {"title": "Vinod Kanigicherla"}
+    return render_template('timeline.html', **context)
+
 @app.route("/api/timeline_post", methods=["POST"])
 def post_time_line_post():
     name = request.form["name"]
@@ -82,7 +93,7 @@ def post_time_line_post():
 def get_time_line_post():
     return {
         "timeline_posts": [
-            model_to_dict(p) for p in TimelinePost.select().order_by(TimelinePost.created_at.desc())
+            {**model_to_dict(p), "gravatar": get_gravatar_url(p.email)} for p in TimelinePost.select().order_by(TimelinePost.created_at.desc())
         ]
     }
 
@@ -91,7 +102,6 @@ def delete_time_line_post(post_id):
     timeline_post = TimelinePost.get_by_id(post_id)
     timeline_post.delete_instance()
     return model_to_dict(timeline_post)
-
 
 # Run the application
 if __name__ == "__main__":
