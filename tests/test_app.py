@@ -3,7 +3,7 @@
 import os
 import unittest
 
-os.environ["TESTING"] = "True"
+os.environ["TESTING"] = "true"
 
 from app import TimelinePost, app
 
