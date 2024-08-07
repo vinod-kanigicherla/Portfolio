@@ -57,6 +57,11 @@ def about():
         "about_me": "Hi! I'm Vinod, a student at UCSB majoring in Computer Science. I am deeply interested in the intersection of data science, computer science, and software engineering, with a particular focus on machine learning and its practical applications for solving real-world challenges.",
         "work_experiences": [
             {
+                "role": "Production Engineering Fellow @ MLH + Meta",
+                "duration": "2024",
+            },
+
+            {
                 "role": "Undergraduate Researcher at Communications @ UCSB",
                 "duration": "2023-2024",
             },
