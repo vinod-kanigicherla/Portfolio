@@ -142,6 +142,5 @@ def delete_time_line_post(post_id):
     return model_to_dict(timeline_post)
 
 
-# Run the application
 if __name__ == "__main__":
     app.run(debug=True)
