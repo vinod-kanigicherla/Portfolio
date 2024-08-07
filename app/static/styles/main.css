@@ -56,7 +56,7 @@ body {
 }
 
 .navbar {
-    background-color: #1C539F; /* Blue color to match the header */
+    background-color: #1C539F;
     padding: 10px 0;
     text-align: center;
     margin-top: 50px;
@@ -79,12 +79,12 @@ body {
     color: white;
     text-decoration: none;
     font-size: 18px;
-    font-family: 'Roboto', sans-serif; /* Use the same font as the rest of the page */
+    font-family: 'Roboto', sans-serif;
     transition: color 0.3s ease;
 }
 
 .navbar ul li a:hover {
-    color: #ffcc00; /* Optional: Change the color on hover */
+    color: #ffcc00;
 }
 
 .navbar ul li a:focus {
@@ -381,4 +381,8 @@ body {
     color: red;
     font-size: 0.9em;
     margin-top: 5px;
+}
+
+.timeline-description p {
+    margin-bottom: 1em; 
 }
