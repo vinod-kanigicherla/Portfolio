@@ -1,8 +1,5 @@
 #!/bin/bash
 
-# Change to the project directory
-cd /path/to/your/project
-
 # Fetch the latest changes from the main branch
 git fetch && git reset origin/main --hard
 
